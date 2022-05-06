@@ -18,12 +18,16 @@ defmodule BinckquotesWeb.Router do
     pipe_through :browser
 
     live "/", IndexLive
+    live "/oud", OldQuotesLive
+    live "/nieuw", NewQuotesLive
+    live "/random", RandomQuoteLive
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", BinckquotesWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", BinckquotesWeb do
+    pipe_through :api
+
+    resources "/quotes", QuoteController, except: [:new, :edit]
+  end
 
   # Enables LiveDashboard only for development
   #

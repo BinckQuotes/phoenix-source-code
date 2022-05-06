@@ -1,0 +1,22 @@
+div.img_container {
+    @include flexBox();
+    width: 100%;
+    @media (min-width: $mobile) {
+        margin-top: 12%;
+    }
+
+    img {
+        border: 4px solid color(secondary);
+        border-radius: 0.5em;
+    
+        @media (max-width: $mobile) {
+            height: 25em;
+            margin: 3em;
+        }
+    
+        @media (min-width: $mobile) {
+            height: 30em;
+            margin: 2em;
+        }
+    }
+}

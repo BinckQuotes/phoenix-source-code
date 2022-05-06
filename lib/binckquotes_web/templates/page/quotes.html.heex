@@ -1,0 +1,17 @@
+<div class="quotes">
+
+    <%= for quote <- @quotes do %>
+        <div class="quote">
+
+            <p>"<%= quote.text %>"
+                <%= cond do
+                    quote.is_new && quote.is_old -> "- binck"
+                    quote.is_new -> "- nieuwe binck"
+                    quote.is_old -> "- nieuwe binck"
+                end %>
+            </p>
+        </div>
+
+    <% end %>
+
+</div>

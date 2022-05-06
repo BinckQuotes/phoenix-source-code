@@ -2,10 +2,10 @@ defmodule BinckquotesWeb.IndexLive do
   use BinckquotesWeb, :live_view
 
   def mount(_params, _session, socket) do
-    {:ok, socket}
+    {:ok, assign(socket, _: "")}
   end
 
-  def render(socket) do
-    render(BinckquotesWeb.PageView, "index.html", socket)
+  def render(assigns) do
+    render(BinckquotesWeb.PageView, "index.html", assigns)
   end
 end

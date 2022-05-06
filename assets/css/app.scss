@@ -1,11 +1,40 @@
 @import "./scss/macros";
+@import "./scss/viewport";
+@import "./scss/sidebar";
+@import "./scss/quotes";
+@import "./scss/images";
 
 * {
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html, body, div#viewport, main {
   width: 100%;
   height: 100%;
+}
+
+@media (min-width: $mobile) {
+  div#viewport div.phx-connected {
+    width: 85%;
+  }
+}
+
+@media (min-width: $mobile) {
+	html, body {
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		bottom: 0;
+	}
+}
+
+@media (min-width: $mobile) {
+	html, body {
+		overflow: hidden;
+		position: relative;
+		top: 0;
+	}
 }

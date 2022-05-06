@@ -1,0 +1,19 @@
+$mobile: 600px;
+
+$colors: (
+    "secondary": rgb(31, 33, 65),
+    "text": rgb(255, 255, 255),
+);
+
+@function color($name) {
+    @return map-get($colors, $name);
+}
+
+@mixin flexBox($d: row, $j: space-around, $a: unset) {
+    vertical-align: middle;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: $d;
+    justify-content: $j;
+    align-items: $a;
+}

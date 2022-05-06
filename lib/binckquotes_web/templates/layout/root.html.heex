@@ -10,8 +10,23 @@
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
   <body>
-    <header>
-    </header>
-    <%= @inner_content %>
+
+    <div id="viewport">
+      <nav id="sidebar">
+          <span>
+            <%= live_redirect to: "/", class: "title_link" do %>
+              <h1>Binck Quotes</h1>
+            <% end %>
+          </span>
+
+          <div class="links">
+            <%= live_redirect to: "/oud" do %><h2>Oude Quotes</h2><% end %>
+            <%= live_redirect to: "/nieuw" do %><h2>Nieuwe Quotes</h2><% end %>
+            <%= live_redirect to: "/random" do %><h2>Random Quote</h2><% end %>
+          </div>
+      </nav>
+
+      <%= @inner_content %>
+    </div>
   </body>
 </html>

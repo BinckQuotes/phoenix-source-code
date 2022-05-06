@@ -1,0 +1,31 @@
+@media (min-width: $mobile) {
+    div#viewport {
+        @include flexBox($j: unset);
+
+        @media (max-width: $mobile) {
+            @include flexBox($j: space-between, $d: row)
+        }
+        
+        // div {
+        //     @include flexBox();
+        //     width: 85%;
+        // }
+
+        @media (max-width: $mobile) {
+            @include flexBox($d: row);
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    div#viewport {
+        @media (min-width: $mobile) {
+            @include flexBox($j: space-between);
+        }
+        
+        // div {
+        //     @include flexBox();
+        //     font-size: 0.5em;
+        // }
+    }
+}
