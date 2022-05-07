@@ -21,6 +21,8 @@ defmodule BinckquotesWeb.Router do
     live "/oud", OldQuotesLive
     live "/nieuw", NewQuotesLive
     live "/random", RandomQuoteLive
+
+    live "/management", QuotesManagementLive
   end
 
   scope "/api", BinckquotesWeb do

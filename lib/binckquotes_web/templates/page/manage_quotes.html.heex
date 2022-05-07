@@ -1,0 +1,22 @@
+<h1>Nieuwe Quote:</h1>
+<form action="" class="new" phx-submit="add_quote">
+  <input type="text" name="text" id="text" placeholder="Quote text..."> 
+  <input type="text" name="is_new" id="is_new" placeholder="is_new: true | false">
+  <input type="text" name="is_old" id="is_old" placeholder="is_old: true | false">
+  <button type="submit">
+    <span>add</span>
+  </button>
+</form>
+
+<h1>Quotes:</h1>
+<%= for quote <- @quotes do %>
+    <div class="quote">
+        <span class="quote_text">text: <%= quote.text %></span>
+        <br>
+        <span>is_new: <%= quote.is_new %></span>
+        <br>
+        <span>is_old: <%= quote.is_old %></span>
+        <br>
+        <button class="delete" phx-value-id={quote.id} phx-click="delete_quote">DELETE</button>
+    </div>
+<% end %>
