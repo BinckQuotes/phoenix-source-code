@@ -1,6 +1,3 @@
-# This file is responsible for configuring your application
-# and its dependencies with the aid of the Config module.
-#
 # This configuration file is loaded before any dependency and
 # is restricted to this project.
 
@@ -12,7 +9,8 @@ config :binckquotes,
 
 # Configures the endpoint
 config :binckquotes, BinckquotesWeb.Endpoint,
-  url: [host: "localhost"],
+  # url: [host: "localhost"],
+  url: [host: "https://binckquotes.gigalixirapp.com/"],
   render_errors: [view: BinckquotesWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Binckquotes.PubSub,
   live_view: [signing_salt: "Wz+va4sD"]
