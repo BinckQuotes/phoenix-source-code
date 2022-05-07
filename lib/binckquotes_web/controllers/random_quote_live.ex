@@ -12,8 +12,6 @@ defmodule BinckquotesWeb.RandomQuoteLive do
 
   defp get_random_quote() do
     Quotes.list_quotes()
-      |> length()
-      |> :rand.uniform()
-      |> Quotes.get_quote!()
+      |> Enum.random()
   end
 end
