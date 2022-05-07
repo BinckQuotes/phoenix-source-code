@@ -15,8 +15,18 @@ config :logger, level: :info
 config :binckquotes, BinckquotesWeb.Endpoint,
   cache_static_manfest: "priv/static/cache_manifest.json",
   check_origin: true,
-  check_origin: ["https://binckquotes.gigalixirapp.com/",
-                "https://binckquotes.gigalixirapp.com/api/getquotes"]
+  check_origin: [ "https://binckquotes.gigalixirapp.com/",
+                  "https://binckquotes.gigalixirapp.com/nieuw",
+                  "https://binckquotes.gigalixirapp.com/oud",
+                  "https://binckquotes.gigalixirapp.com/random",
+                  "https://binckquotes.gigalixirapp.com/management",
+                  "https://binckquotes.gigalixirapp.com/api/getquotes" ]
+      url: [host: "binckquotes.gigalixirapp.com"],
+      https: [
+        cipher_suite: :strong,
+        keyfile: System.get_env("SOME_APP_SSL_KEY_PATH"),
+        certfile: System.get_env("SOME_APP_SSL_CERT_PATH")
+      ]
 
 # ## SSL Support
 #

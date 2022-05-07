@@ -9,7 +9,6 @@ config :binckquotes,
 
 # Configures the endpoint
 config :binckquotes, BinckquotesWeb.Endpoint,
-  # url: [host: "localhost"],
   url: [host: "https://binckquotes.gigalixirapp.com/"],
   render_errors: [view: BinckquotesWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Binckquotes.PubSub,
