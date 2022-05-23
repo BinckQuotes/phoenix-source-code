@@ -13,8 +13,19 @@
   <%= for quote <- @quotes do %>
       <div class="quote">
           <span class="quote_text">text: <%= quote.text %></span>&nbsp;
-          <span>is_new: <%= quote.is_new %></span>&nbsp;
-          <span>is_old: <%= quote.is_old %></span>&nbsp;
+
+          <%= if quote.is_new do %>
+            <span style="color: green;">is_new: <%= quote.is_new %></span>&nbsp;
+          <% else %>
+            <span style="color: red;">is_new: <%= quote.is_new %></span>&nbsp;
+          <% end %>
+
+          <%= if quote.is_old do %>
+            <span style="color: green;">is_old: <%= quote.is_old %></span>&nbsp;
+          <% else %>
+            <span style="color: red;">is_old: <%= quote.is_old %></span>&nbsp;
+          <% end %>
+
           <button class="delete" phx-value-id={quote.id} phx-click="delete_quote">DELETE</button>
       </div>
   <% end %>
@@ -22,6 +33,6 @@
 
 <style>
   div.m_quotes {
-    overflow: scroll !important;
+    overflow: scroll;
   }
 </style>
