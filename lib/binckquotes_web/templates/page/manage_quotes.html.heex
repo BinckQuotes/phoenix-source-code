@@ -12,7 +12,7 @@
 <div class="m_quotes">
   <%= for quote <- @quotes do %>
       <div class="quote">
-          <span class="quote_text">text: <%= quote.text %></span>&nbsp;
+          <span class="quote_text">text: "<%= quote.text %>"</span>&nbsp;
 
           <%= if quote.is_new do %>
             <span style="color: green;">is_new: <%= quote.is_new %></span>&nbsp;
