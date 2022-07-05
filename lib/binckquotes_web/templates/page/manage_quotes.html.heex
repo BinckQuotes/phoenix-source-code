@@ -14,7 +14,7 @@
       <div class="quote">
           <span class="quote_text">text: "<%= quote.text %>"</span>&nbsp;
 
-          <%= if quote.is_new do %>
+          <% if quote.is_new do %>
             <span style="color: green;">is_new: <%= quote.is_new %></span>&nbsp;
           <% else %>
             <span style="color: red;">is_new: <%= quote.is_new %></span>&nbsp;

@@ -23,7 +23,7 @@ defmodule BinckquotesWeb.QuotesManagementLive do
   end
 
   defp to_bool(s) do
-    if s == "true" || s == :true || s == true do
+    if s == "true" || s == :true || s == true || s == "t" || s == :t do
       true
     else
       false
